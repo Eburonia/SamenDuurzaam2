@@ -80,39 +80,39 @@
         <form action="{{ url_for('energielabel') }}" method="POST">
 
             <label for="electriciteitsverbruik">Electriciteitsverbruik [kWh]</label>
-            <input type="text" name="electriciteitsverbruik" id="electriciteitsverbruik" value="1770">
+            <input type="text" name="electriciteitsverbruik" id="electriciteitsverbruik" value="{{ electriciteitsverbruik }}">
 
             <label for="electriciteitteruggeleverd">Electriciteit teruggeleverd [kWh]</label>
-            <input type="text" name="electriciteitteruggeleverd" id="electriciteitteruggeleverd" value="3480">
+            <input type="text" name="electriciteitteruggeleverd" id="electriciteitteruggeleverd" value="{{ electriciteitteruggeleverd }}">
 
             <label for="gasverbruik">Gasverbruik [m3]</label>
-            <input type="text" name="gasverbruik" id="gasverbruik" value="1730">
+            <input type="text" name="gasverbruik" id="gasverbruik" value="{{ gasverbruik }}">
 
             <label for="soorthuis">Soort huis</label>
             <select name="soorthuis" id="soorthuis">
 
-                <option value="vrijstaand">vrijstaand</option>
-                <option value="halfvrijstaan">halfvrijstaand</option>
-                <option value="tussenliggend">tussenliggend</option>
+                <option value="vrijstaand" {{ soorthuis1 }}>vrijstaand</option>
+                <option value="halfvrijstaand" {{ soorthuis2 }}>halfvrijstaand</option>
+                <option value="tussenliggend" {{ soorthuis3 }}>tussenliggend</option>
 
             </select>
 
             <label for="volumehuis">Volume huis [m3]</label>
-            <input type="text" name="volumehuis" id="volumehuis" value="800">
+            <input type="text" name="volumehuis" id="volumehuis" value="{{ volumehuis }}">
 
             <label for="aantalbewoners">Aantal bewoners</label>
             <select name="aantalbewoners" id="aantalbewoners">
 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7" selected>7</option selected>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+                <option value="1" {{ selected1 }}>1</option>
+                <option value="2" {{ selected2 }}>2</option>
+                <option value="3" {{ selected3 }}>3</option>
+                <option value="4" {{ selected4 }}>4</option>
+                <option value="5" {{ selected5 }}>5</option>
+                <option value="6" {{ selected6 }}>6</option>
+                <option value="7" {{ selected7 }}>7</option>
+                <option value="8" {{ selected8 }}>8</option>
+                <option value="9" {{ selected9 }}>9</option>
+                <option value="10" {{ selected10 }}>10</option>
 
             </select>
 
@@ -126,6 +126,7 @@
             {{ soorthuis }}<br>
             {{ volumehuis }}<br>
             {{ aantalbewoners }}
+            {{ selected9 }}
 
         </form>
 
