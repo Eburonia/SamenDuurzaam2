@@ -99,45 +99,45 @@ def energielabel():
 
         if energieverbruik < 35000:
             energielabel = 'A++'
-            energielabel_color = ''
+            energielabel_color = 'rgb(0, 102, 52)'
 
-        elif energieverbruik >= 35000:
+        if energieverbruik >= 35000:
             energielabel = 'A+'
             energielabel_color = ''
 
-        elif energieverbruik >= 45000:
+        if energieverbruik >= 45000:
             energielabel = 'A'
             energielabel_color = ''
 
-        elif energieverbruik >= 55000:
+        if energieverbruik >= 55000:
             energielabel = 'B++'
             energielabel_color = ''
 
-        elif energieverbruik >= 65000:
+        if energieverbruik >= 65000:
             energielabel = 'B+'
             energielabel_color = ''
 
-        elif energieverbruik >= 75000:
+        if energieverbruik >= 75000:
             energielabel = 'B'
             energielabel_color = ''
 
-        elif energieverbruik >= 85000:
+        if energieverbruik >= 85000:
             energielabel = 'C'
             energielabel_color = ''
 
-        elif energieverbruik >= 95000:
+        if energieverbruik >= 95000:
             energielabel = 'D'
             energielabel_color = ''
 
-        elif energieverbruik >= 105000:
+        if energieverbruik >= 105000:
             energielabel = 'E'
             energielabel_color = ''
 
-        elif energieverbruik >= 115000:
+        if energieverbruik >= 115000:
             energielabel = 'F'
             energielabel_color = ''
 
-        elif energieverbruik >= 125000:
+        if energieverbruik >= 125000:
             energielabel = 'G'
             energielabel_color = ''
 
@@ -162,7 +162,8 @@ def energielabel():
                                soorthuis2=soorthuis2,
                                soorthuis3=soorthuis3,
                                energieverbruik=energieverbruik,
-                               energielabel=energielabel)
+                               energielabel=energielabel,
+                               energielabel_color=energielabel_color)
 
     return render_template("index.html",
                                electriciteitsverbruik=electriciteitsverbruik,

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SamenDuurzaam</title>
+    <title>SamenDuurzaam | Energielabel</title>
 
     <style>
 
@@ -82,6 +82,7 @@
             padding-left: 20px;
             font-size: 40px;
             width: 100px;
+            color: whitesmoke;
         }
 
     </style>
@@ -138,6 +139,54 @@
             <div id="energielabel">{{ energielabel }}</div>
 
         </form>
+
+        <script>
+
+            if(document.getElementById('energielabel').innerText == 'A++') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(0, 102, 52)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'A+') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(0, 102, 52)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'A') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(0, 102, 52)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'B++') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(1, 141, 55)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'B+') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(1, 141, 55)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'B') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(1, 141, 55)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'C') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(146, 192, 31)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'D') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(255, 235, 0)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'E') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(247, 178, 49)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'F') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(233, 90, 12)";
+            }
+
+            if(document.getElementById('energielabel').innerText == 'G') {
+                document.getElementById('energielabel').style.backgroundColor = "rgb(188, 22, 34)";
+            }
+
+        </script>
 
     </body>
 
