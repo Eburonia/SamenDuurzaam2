@@ -26,6 +26,11 @@
             border-radius: 10px;
         }
 
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
         label {
             display: block;
             font-size: 18px;
@@ -34,7 +39,7 @@
         input[type=text] {
             display: block;
             margin-top: 5px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             font-size: 14px;
             font-size: 18px;
             width: 100%;
@@ -66,9 +71,17 @@
             font-size: 18px;
         }
 
-        #energielabel {
+        #energieverbruik {
             font-size: 24px;
             margin-top: 30px;
+        }
+
+        #energielabel {
+            margin-top: 20px;
+            padding: 10px;
+            padding-left: 20px;
+            font-size: 40px;
+            width: 100px;
         }
 
     </style>
@@ -78,6 +91,8 @@
     <body>
         
         <form action="{{ url_for('energielabel') }}" method="POST">
+
+            <h2>Energielabel</h2>
 
             <label for="electriciteitsverbruik">Electriciteitsverbruik [kWh]</label>
             <input type="text" name="electriciteitsverbruik" id="electriciteitsverbruik" value="{{ electriciteitsverbruik }}">
@@ -118,15 +133,9 @@
 
             <input type="submit" value="verzenden">
 
-            <p id="energielabel">Energielabel: </p>
-
-            {{ electriciteitsverbruik }}<br>
-            {{ electriciteitteruggeleverd }}<br>
-            {{ gasverbruik }}<br>
-            {{ soorthuis }}<br>
-            {{ volumehuis }}<br>
-            {{ aantalbewoners }}
-            {{ selected9 }}
+            <p id="energieverbruik">Energieverbruik: {{ energieverbruik }} kJ</p>
+            
+            <div id="energielabel">{{ energielabel }}</div>
 
         </form>
 
