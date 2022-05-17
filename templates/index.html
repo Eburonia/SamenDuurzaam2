@@ -10,10 +10,125 @@
 
     <title>SamenDuurzaam</title>
 
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            background-color: lightgray;
+            width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+        }
+
+        input[type=text] {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-size: 18px;
+            width: 100%;
+            outline: none;
+            padding: 5px 10px;
+            border: 1px solid rgb(30, 30, 30);
+            cursor: pointer;
+        }
+
+        select {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-size: 18px;
+            width: 100%;
+            outline: none;
+            padding: 5px 5px;
+            border-radius: 0;
+            border: 1px solid rgb(30, 30, 30);
+            background-color: white;
+            cursor: pointer;
+        }
+
+        input[type=submit] {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+
+        #energielabel {
+            font-size: 24px;
+            margin-top: 30px;
+        }
+
+    </style>
+
 </head>
 
     <body>
         
+        <form action="{{ url_for('energielabel') }}" method="POST">
+
+            <label for="electriciteitsverbruik">Electriciteitsverbruik [kWh]</label>
+            <input type="text" name="electriciteitsverbruik" id="electriciteitsverbruik" value="1770">
+
+            <label for="electriciteitteruggeleverd">Electriciteit teruggeleverd [kWh]</label>
+            <input type="text" name="electriciteitteruggeleverd" id="electriciteitteruggeleverd" value="3480">
+
+            <label for="gasverbruik">Gasverbruik [m3]</label>
+            <input type="text" name="gasverbruik" id="gasverbruik" value="1730">
+
+            <label for="soorthuis">Soort huis</label>
+            <select name="soorthuis" id="soorthuis">
+
+                <option value="vrijstaand">vrijstaand</option>
+                <option value="halfvrijstaan">halfvrijstaand</option>
+                <option value="tussenliggend">tussenliggend</option>
+
+            </select>
+
+            <label for="volumehuis">Volume huis [m3]</label>
+            <input type="text" name="volumehuis" id="volumehuis" value="800">
+
+            <label for="aantalbewoners">Aantal bewoners</label>
+            <select name="aantalbewoners" id="aantalbewoners">
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option selected>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>
+
+            <input type="submit" value="verzenden">
+
+            <p id="energielabel">Energielabel: </p>
+
+            {{ electriciteitsverbruik }}<br>
+            {{ electriciteitteruggeleverd }}<br>
+            {{ gasverbruik }}<br>
+            {{ soorthuis }}<br>
+            {{ volumehuis }}<br>
+            {{ aantalbewoners }}
+
+        </form>
+
     </body>
 
 </html>
