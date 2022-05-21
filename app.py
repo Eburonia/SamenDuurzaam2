@@ -1,42 +1,11 @@
-import os
 from flask import (Flask, render_template, request, redirect, url_for)
-from flask_pymongo import PyMongo
-
-if os.path.exists("env.py"):
-    import env
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = os.environ.get("MONGODB_NAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-mongo = PyMongo(app)
-
 
 @app.route("/")
 def index():
 
     return render_template("index.html")
-
-
-@app.route("/artiekelen")
-def artiekelen():
-
-    artiekelen = mongo.db.artiekelen2.find()
-
-
-
-    return render_template("artiekelen.html", artiekelen=artiekelen)
-
-
-@app.route("/artiekel")
-def artiekel():
-
-    # Get search keyword(s) from address bar
-    search = request.args.get('name')
-
-    artiekel = mongo.db.artiekelen2.find_one({"link": search})
-
-    return render_template("artiekel.html", artiekel=artiekel)
-
 
 @app.route("/energielabel", methods=["GET", "POST"])
 def energielabel():
@@ -127,7 +96,6 @@ def energielabel():
         elif int(aantalbewoners) == 10:
             selected10 = 'selected'
 
-
         if energieverbruik < 35000:
             energielabel = 'A++'
             energielabel_color = 'rgb(0, 102, 52)'
@@ -202,7 +170,6 @@ def energielabel():
                                gasverbruik=gasverbruik,
                                volumehuis=volumehuis,
                                )
-
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
